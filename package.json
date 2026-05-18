@@ -1,0 +1,9 @@
+{
+  "name": "dra-jaqueline-bellato",
+  "version": "1.0.0",
+  "description": "Consultório Dra. Jaqueline Bellato - Site institucional",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000"
+  }
+}

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Jaqueline Bellato | Odontologia</title>
+  <meta name="description" content="Consultório Dra. Jaqueline Bellato - Excelência em Odontologia em Taubaté. Clareamento, Alinhadores Invisíveis, Ortodontia, Próteses e muito mais." />
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Montserrat',sans-serif;background:#1A2426;color:#F5F2ED;line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+
+    /* ===== GRAIN OVERLAY ===== */
+    .grain-overlay{position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")}
+    @media (min-width: 768px) {
+      .grain-overlay{background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")}
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1,h2,h3,.font-serif{font-family:'Cormorant Garamond',serif}
+    .tagline{font-family:'Mrs Saint Delafield',cursive}
+
+    /* ===== NAVIGATION ===== */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;justify-content:flex-start;align-items:center;transition:all .4s ease;background:#faf8f5}
+    .nav.scrolled{background:#faf8f5;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 2rem;border-bottom:1px solid rgba(26,36,38,.08);box-shadow:0 1px 6px rgba(0,0,0,.06)}
+    .nav-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none;flex-shrink:0}
+    .nav-right{display:flex;align-items:center;gap:2rem;margin-left:auto}
+    .nav-logo span{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:#1A2426;letter-spacing:1px}
+    .nav-logo .gold-dot{width:8px;height:8px;border-radius:50%;background:#C5A059}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{color:rgba(26,36,38,.7);text-decoration:none;font-size:.8rem;font-weight:400;letter-spacing:1.5px;text-transform:uppercase;transition:color .3s}
+    .nav-links a:hover,.nav-links a.active{color:#C5A059}
+    .nav-cta{background:#C5A059;color:#1A2426;border:none;padding:.55rem 1.5rem;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .3s;text-decoration:none;display:inline-block;flex-shrink:0}
+    .nav-cta:hover{background:#d4b368}
+    .mobile-toggle{display:none;background:none;border:none;color:#1A2426;font-size:1.5rem;cursor:pointer;padding:.5rem;flex-shrink:0}
+    @media(max-width:1024px){
+      .nav-links{display:none}
+      .nav-right .nav-cta{display:none}
+      .mobile-toggle{display:block}
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu{position:fixed;inset:0;background:rgba(26,36,38,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(100%);transition:transform .5s cubic-bezier(.4,0,.2,1)}
+    .mobile-menu.open{transform:translateX(0)}
+    .mobile-menu a{color:rgba(245,242,237,.8);text-decoration:none;font-family:'Cormorant Garamond',serif;font-size:1.75rem;letter-spacing:2px;transition:color .3s}
+    .mobile-menu a:hover{color:#C5A059}
+    .mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#F5F2ED;font-size:1.75rem;cursor:pointer}
+    .mobile-cta{margin-top:1rem;background:#C5A059;color:#1A2426;padding:.75rem 2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:4px}
+
+    /* ===== SECTIONS ===== */
+    .section{padding:6rem 2rem}
+    .container{max-width:1200px;margin:0 auto}
+
+    /* ===== HERO ===== */
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 4rem}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(197,160,89,.06) 0%,transparent 70%)}
+    .hero-content{text-align:center;position:relative;z-index:1;max-width:900px}
+    .hero-tag{font-family:'Mrs Saint Delafield',cursive;font-size:clamp(2rem,4vw,3rem);color:#C5A059;margin-bottom:.5rem;line-height:1}
+    .hero h1{font-size:clamp(2.5rem,6vw,5.5rem);font-weight:300;line-height:1.1;letter-spacing:1px;color:#F5F2ED}
+    .hero h1 em{font-style:italic;color:#C5A059}
+    .hero-sub{font-size:.85rem;color:rgba(245,242,237,.6);max-width:550px;margin:1.5rem auto 2.5rem;line-height:1.8;letter-spacing:.5px}
+    .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn-primary{background:#C5A059;color:#1A2426;border:none;padding:.8rem 2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-primary:hover{background:#d4b368;transform:translateY(-2px)}
+    .btn-outline{border:1px solid rgba(197,160,89,.4);color:#F5F2ED;background:transparent;padding:.8rem 2rem;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-outline:hover{border-color:#C5A059;background:rgba(197,160,89,.05)}
+
+    .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:bounce 2s infinite;opacity:.5}
+    .hero-scroll span{display:block;width:1px;height:40px;background:rgba(197,160,89,.4);margin:0 auto .5rem}
+    .hero-scroll svg{width:16px;height:16px;stroke:#C5A059;opacity:.6}
+    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+    /* ===== GOOGLE RATING BADGE ===== */
+    .google-badge{display:inline-flex;align-items:center;gap:.75rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem 1.25rem;margin-bottom:2rem}
+    .google-badge .stars{color:#C5A059;font-size:.8rem;letter-spacing:2px}
+    .google-badge .rating{font-weight:600;font-size:.85rem;color:#F5F2ED}
+    .google-badge .count{font-size:.75rem;color:rgba(245,242,237,.5)}
+    .google-badge img{height:18px;opacity:.8}
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header{text-align:center;margin-bottom:4rem}
+    .section-tag{font-family:'Mrs Saint Delafield',cursive;font-size:2rem;color:#C5A059;margin-bottom:.25rem;line-height:1}
+    .section-header h2{font-size:clamp(2rem,3.5vw,3.5rem);font-weight:300;letter-spacing:1px;color:#F5F2ED}
+    .section-header .accent{font-style:italic;color:#C5A059}
+    .divider{width:40px;height:2px;background:#C5A059;margin:1.5rem auto 1rem}
+
+    /* ===== SOBRE ===== */
+    .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    @media(max-width:768px){.sobre-grid{grid-template-columns:1fr;gap:2rem}}
+    .sobre-image{position:relative;border-radius:4px;overflow:hidden}
+    .sobre-image::after{content:'';position:absolute;inset:0;border:1px solid rgba(197,160,89,.15);border-radius:4px;pointer-events:none}
+    .sobre-image .img-placeholder{aspect-ratio:3/4;background:linear-gradient(135deg,#1f2a2d 0%,#263135 100%);display:flex;align-items:center;justify-content:center;color:rgba(245,242,237,.05);font-size:5rem}
+    .sobre-badge{position:absolute;bottom:2rem;right:-1rem;background:#C5A059;color:#1A2426;padding:.75rem 1.5rem;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;border-radius:4px;letter-spacing:1px}
+    @media(max-width:480px){.sobre-badge{font-size:.9rem;padding:.5rem 1rem;right:0}}
+    .sobre-text h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin-bottom:1.5rem;color:#F5F2ED;letter-spacing:.5px}
+    .sobre-text h2 em{font-style:italic;color:#C5A059}
+    .sobre-text p{font-size:.85rem;color:rgba(245,242,237,.6);line-height:1.8;margin-bottom:1rem;letter-spacing:.3px}
+    .sobre-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+    @media(max-width:480px){.sobre-stats{grid-template-columns:1fr 1fr}}
+    .stat-item{text-align:center;padding:1.5rem 1rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:4px}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:#C5A059;line-height:1}
+    .stat-label{font-size:.7rem;color:rgba(245,242,237,.5);text-transform:uppercase;letter-spacing:1.5px;margin-top:.5rem}
+
+    /* ===== SERVIÇOS ===== */
+    .servicos{background:rgba(20,27,29,.5)}
+    .servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media(max-width:1024px){.servicos-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.servicos-grid{grid-template-columns:1fr}}
+    .servico-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:6px;padding:2.5rem 2rem;transition:all .4s ease;position:relative;overflow:hidden}
+    .servico-card:hover{border-color:rgba(197,160,89,.3);background:rgba(197,160,89,.03);transform:translateY(-4px)}
+    .servico-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,160,89,.3),transparent);opacity:0;transition:opacity .4s}
+    .servico-card:hover::before{opacity:1}
+    .servico-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(197,160,89,.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:#C5A059;font-size:1.2rem}
+    .servico-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#F5F2ED;margin-bottom:.75rem;letter-spacing:.5px}
+    .servico-card p{font-size:.8rem;color:rgba(245,242,237,.5);line-height:1.7;letter-spacing:.3px}
+
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media(max-width:1024px){.depoimentos-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:600px){.depoimentos-grid{grid-template-columns:1fr}}
+    .depoimento-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:2rem;position:relative}
+    .depoimento-card .google-label{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
+    .depoimento-card .google-label img{height:16px;opacity:.7}
+    .depoimento-card .google-label span{font-size:.7rem;color:rgba(245,242,237,.4);letter-spacing:.5px}
+    .depoimento-stars{color:#C5A059;font-size:.75rem;letter-spacing:2px;margin-bottom:.75rem}
+    .depoimento-card p{font-size:.85rem;color:rgba(245,242,237,.7);line-height:1.7;font-style:italic;letter-spacing:.3px;margin-bottom:1.5rem}
+    .depoimento-author{display:flex;align-items:center;gap:.75rem}
+    .depoimento-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#C5A059 0%,#8a6e3a 100%);display:flex;align-items:center;justify-content:center;color:#1A2426;font-weight:600;font-size:.8rem}
+    .depoimento-author strong{font-size:.8rem;color:#F5F2ED;font-weight:500}
+    .depoimento-author span{font-size:.7rem;color:rgba(245,242,237,.4)}
+
+    /* ===== VIDEO DEPOIMENTO ===== */
+    .video-destaque{margin-bottom:3rem}
+    .video-destaque h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;margin-bottom:1.5rem;letter-spacing:.5px;color:#F5F2ED}
+    .video-destaque h3 em{font-style:italic;color:#C5A059}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media(max-width:768px){.video-grid{grid-template-columns:1fr}}
+    .video-card{aspect-ratio:16/9;border-radius:8px;overflow:hidden;position:relative;background:#141b1d;border:1px solid rgba(255,255,255,.05);cursor:pointer}
+    .video-card .play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,36,38,.4);transition:background .3s}
+    .video-card:hover .play-btn{background:rgba(26,36,38,.2)}
+    .video-card .play-circle{width:60px;height:60px;border-radius:50%;border:2px solid #C5A059;display:flex;align-items:center;justify-content:center;color:#C5A059;transition:all .3s}
+    .video-card:hover .play-circle{background:rgba(197,160,89,.15);transform:scale(1.1)}
+
+    /* ===== ANTES & DEPOIS ===== */
+    .antes-depois{background:rgba(20,27,29,.5)}
+    .antes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    @media(max-width:768px){.antes-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:480px){.antes-grid{grid-template-columns:1fr}}
+    .caso-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;overflow:hidden}
+    .caso-comparison{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+    .caso-side{aspect-ratio:4/5;background:#141b1d;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .caso-side .label{position:absolute;top:.5rem;left:.5rem;background:rgba(26,36,38,.8);color:#F5F2ED;padding:.2rem .6rem;font-size:.65rem;letter-spacing:1px;text-transform:uppercase;border-radius:2px}
+    .caso-side.after .label{background:rgba(197,160,89,.8);color:#1A2426}
+    .caso-info{padding:1.25rem}
+    .caso-info h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#F5F2ED}
+    .caso-info span{font-size:.7rem;color:rgba(245,242,237,.4);text-transform:uppercase;letter-spacing:1px}
+
+    /* ===== CONTATO ===== */
+    .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+    @media(max-width:768px){.contato-grid{grid-template-columns:1fr;gap:2rem}}
+    .contato-info h2{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;margin-bottom:2rem;color:#F5F2ED;letter-spacing:.5px}
+    .contato-info h2 em{font-style:italic;color:#C5A059}
+    .info-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem}
+    .info-icon{width:40px;height:40px;border-radius:50%;border:1px solid rgba(197,160,89,.25);display:flex;align-items:center;justify-content:center;color:#C5A059;flex-shrink:0;font-size:.9rem}
+    .info-item strong{display:block;font-size:.8rem;font-weight:500;color:#F5F2ED;letter-spacing:.5px;margin-bottom:.2rem}
+    .info-item span{font-size:.8rem;color:rgba(245,242,237,.5);line-height:1.6}
+    .info-item a{color:rgba(245,242,237,.5);text-decoration:none;transition:color .3s}
+    .info-item a:hover{color:#C5A059}
+    .contato-map{border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.05);aspect-ratio:4/3}
+    .contato-map iframe{width:100%;height:100%;border:none}
+    .contato-cta{margin-top:2rem}
+
+    /* ===== FOOTER ===== */
+    .footer{background:#141b1d;border-top:1px solid rgba(255,255,255,.05);padding:4rem 2rem 2rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
+    .footer-brand p{font-size:.8rem;color:rgba(245,242,237,.4);line-height:1.8;margin-top:1rem;max-width:300px}
+    .footer h4{font-size:.75rem;color:#F5F2ED;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem;font-weight:500}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:.75rem}
+    .footer-links a{font-size:.8rem;color:rgba(245,242,237,.4);text-decoration:none;transition:color .3s;letter-spacing:.3px}
+    .footer-links a:hover{color:#C5A059}
+    .footer-social{display:flex;gap:1rem;margin-top:1.5rem}
+    .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(245,242,237,.4);transition:all .3s;text-decoration:none;font-size:.8rem}
+    .footer-social a:hover{border-color:#C5A059;color:#C5A059}
+    .footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-bottom p{font-size:.7rem;color:rgba(245,242,237,.3);letter-spacing:.5px}
+    .footer-bottom-links{display:flex;gap:1.5rem}
+    .footer-bottom-links a{font-size:.7rem;color:rgba(245,242,237,.3);text-decoration:none;transition:color .3s}
+    .footer-bottom-links a:hover{color:#C5A059}
+
+    /* ===== WHATSAPP FLOATING ===== */
+    .whatsapp-float{position:fixed;bottom:2rem;right:2rem;z-index:150;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;text-decoration:none}
+    .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6)}
+
+    /* ===== SCROLL REVEAL ANIMATIONS ===== */
+    .reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.4,0,.2,1)}
+    .reveal.revealed{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:0s}.reveal-delay-2{transition-delay:.15s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.45s}
+
+    /* ===== SERVICES HOURS BADGE ===== */
+    .hours-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:50px;padding:.4rem 1rem;font-size:.75rem;color:#25D366;margin-bottom:1.5rem}
+    .hours-badge .dot{width:6px;height:6px;border-radius:50%;background:#25D366;animation:pulse-dot 2s infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:300;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+    .lightbox.open{opacity:1;pointer-events:auto}
+    .lightbox-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+    .lightbox-content{max-width:90vw;max-height:90vh}
+  </style>
+</head>
+<body>
+
+<div class="grain-overlay"></div>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav-logo">
+    <span>Dra. Jaqueline Bellato</span>
+    <div class="gold-dot"></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+
+    </ul>
+    <a href="https://wa.me/551234260989" class="nav-cta" target="_blank">Agendar Consulta</a>
+  </div>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose" aria-label="Fechar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#sobre" class="mobile-link">Sobre</a>
+  <a href="#servicos" class="mobile-link">Serviços</a>
+  <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+  <a href="#casos" class="mobile-link">Casos Reais</a>
+
+  <a href="https://wa.me/551234260989" class="mobile-cta" target="_blank">Agendar via WhatsApp</a>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content reveal">
+    <p class="hero-tag">Excelência em</p>
+    <h1>Odontologia de <em>Alta Performance</em> em Taubaté</h1>
+    <p class="hero-sub">Consultório moderno no coração de Taubaté, oferecendo tratamentos odontológicos com tecnologia avançada e cuidado humanizado para transformar o seu sorriso.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/551234260989" class="btn-primary" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        Agendar via WhatsApp
+      </a>
+      <a href="#servicos" class="btn-outline">Conheça os Serviços</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+  </div>
+</section>
+
+<!-- Sobre Section -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-image reveal">
+        <img src="img/dra.jaqueline1.jpg" alt="Dra. Jaqueline Bellato" style="width:100%;height:100%;object-fit:cover;aspect-ratio:3/4" />
+        <div class="sobre-badge">CRO-SP Ativo</div>
+      </div>
+      <div class="sobre-text reveal">
+        <p class="section-tag">A Especialista</p>
+        <h2>Dra. Jaqueline <em>Bellato</em></h2>
+        <div class="divider" style="margin:1rem 0 1.5rem"></div>
+        <p>A Dra. Jaqueline Bellato é especializada em tratamentos odontológicos completos, oferecendo atendimento multidisciplinar com foco na saúde bucal e estética do sorriso. Com anos de experiência clínica, atua com visão integrada da odontologia, unindo diferentes especialidades em um planejamento único e personalizado para cada paciente.</p>
+        <p>Todo o planejamento é realizado pela Dra. Jaqueline, garantindo coerência entre diagnóstico e execução. O consultório segue um fluxo estruturado, com uma equipe treinada e dedicada ao bem-estar e conforto de cada paciente.</p>
+        <p>Sua atenção aos detalhes e compromisso com a atualização constante resultam em tratamentos mais efetivos e menos invasivos, priorizando o conforto e a recuperação rápida de seus pacientes.</p>
+        <div class="sobre-stats">
+          <div class="stat-item">
+            <div class="stat-num">+10</div>
+            <div class="stat-label">Anos de Experiência</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5.0</div>
+            <div class="stat-label">Avaliação Google</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">+242</div>
+            <div class="stat-label">Pacientes Satisfeitos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Serviços Section -->
+<section class="section servicos" id="servicos">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Nossos</p>
+      <h2>Serviços <em>& Especialidades</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="servicos-grid">
+      <div class="servico-card reveal reveal-delay-1">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M8 12h8M12 8v8"/></svg>
+        </div>
+        <h3>Clareamento Dental</h3>
+        <p>Técnicas avançadas de clareamento para um sorriso mais branco e radiante, com segurança e resultados visíveis desde a primeira sessão.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-1">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="7" y1="14" x2="7.01" y2="14"/><line x1="11" y1="14" x2="11.01" y2="14"/></svg>
+        </div>
+        <h3>Alinhadores Invisíveis</h3>
+        <p>Ortodontia moderna e discreta com alinhadores transparentes que corrigem o posicionamento dos dentes de forma confortável e eficaz.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-1">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Limpeza (Profilaxia)</h3>
+        <p>Limpeza profissional completa para remoção de tártaro e placa bacteriana, prevenindo cáries e doenças gengivais.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-2">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        </div>
+        <h3>Ortodontia (Aparelhos)</h3>
+        <p>Tratamentos ortodônticos personalizados para corrigir o alinhamento dental e melhorar a função e estética do sorriso.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-2">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Próteses Fixas e Removíveis</h3>
+        <p>Reabilitação oral com próteses de alta qualidade, devolvendo a função mastigatória e a estética do sorriso de forma natural.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-2">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>Raspagem Periodontal</h3>
+        <p>Tratamento especializado para saúde gengival, removendo tártaro e bactérias abaixo da linha da gengiva, prevenindo a periodontite.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-3">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Restaurações/Obturações</h3>
+        <p>Restaurações estéticas com materiais de alta resistência, devolvendo a forma, função e aparência natural dos dentes.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-3">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        </div>
+        <h3>Tratamento de Bruxismo</h3>
+        <p>Diagnóstico e tratamento do bruxismo com placas personalizadas, aliviando dores musculares e protegendo os dentes do desgaste.</p>
+      </div>
+
+      <div class="servico-card reveal reveal-delay-3">
+        <div class="servico-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Tratamento Endodôntico (Canal)</h3>
+        <p>Tratamento de canal com tecnologia moderna, eliminando a dor e preservando o dente natural com segurança e conforto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Depoimentos Section -->
+<section class="section" id="depoimentos">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">O que dizem</p>
+      <h2>Depoimentos <em>& Avaliações</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <!-- Google Rating Summary -->
+    <div style="text-align:center;margin-bottom:3rem" class="reveal">
+      <div class="google-badge" style="padding:.75rem 2rem">
+        <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        <div class="stars">★★★★★</div>
+        <div class="rating">5.0</div>
+        <div class="count">Google Review · 242 avaliações</div>
+      </div>
+    </div>
+
+    <!-- Google Reviews -->
+    <div class="depoimentos-grid">
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Fui atendida por uma dentista maravilhosa! Eu estava um pouco apreensiva, pois faz tempo que não era bem atendida, mas desde a recepção já me senti acolhida. A sala é linda, organizada e transmite muita tranquilidade."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">BA</div>
+          <div>
+            <strong>Beatriz AJ</strong>
+            <span>5 reviews · 5 months ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Consultório muito bem localizado, Dra. Jaqueline uma profissional atenciosa, acolhedora, trabalha muito bem. Obrigada pelo carinho e atenção com meus filhos e comigo. Retornarei sempre."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">JN</div>
+          <div>
+            <strong>Jessica Nogueira</strong>
+            <span>3 reviews · 2 months ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Dra. Jaqueline é excelente profissional. Passei com ela algumas vezes esse ano e não troco mais de dentista. Atenciosa, ouve o paciente, trabalha com calma e fazendo o máximo para que fiquemos confortáveis durante o procedimento."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">SG</div>
+          <div>
+            <strong>Sheila Gomes</strong>
+            <span>4 reviews · 5 months ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Fui atendida pela Dra. Jaqueline. Profissional ótima, educada, simpática, cuidadosa. Clínica pontual, organizada. A recepção também gentil e simplificada — já tinha mandado os dados antes, então só assinei a ficha. Recomendo!"</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">RN</div>
+          <div>
+            <strong>Riana Nunes</strong>
+            <span>Local Guide · 21 reviews · 5 months ago</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"A Dra. Jaqueline é uma profissional excepcional! O atendimento é impecável, o consultório é moderno e muito acolhedor. Meu tratamento superou todas as expectativas."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">MS</div>
+          <div>
+            <strong>Mariana Silva</strong>
+            <span>Verified Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Excelente profissional! Fiz clareamento e restaurações com a Dra. Jaqueline e a experiência foi incrível. Muito atenciosa, técnica impecável e o resultado ficou maravilhoso."</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">CO</div>
+          <div>
+            <strong>Carlos Oliveira</strong>
+            <span>Verified Review</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card reveal">
+        <div class="google-label">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <div class="depoimento-stars">★★★★★</div>
+        <p>"Atendimento nota 10. A clínica é linda e a Dra. Jaqueline transmite muita segurança em todo o processo. Recomendo a todos que buscam um sorriso perfeito!"</p>
+        <div class="depoimento-author">
+          <div class="depoimento-avatar">AP</div>
+          <div>
+            <strong>Ana Paula L.</strong>
+            <span>Verified Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Casos Reais -->
+<section class="section antes-depois" id="casos">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-tag">Resultados</p>
+      <h2>Casos <em>Reais</em></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="antes-grid">
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso1.jpeg" alt="Caso 1" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 1</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso2.jpeg" alt="Caso 2" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 2</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso3.jpeg" alt="Caso 3" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 3</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso4.jpeg" alt="Caso 4" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 4</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso5.jpeg" alt="Caso 5" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 5</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+
+      <div class="caso-card reveal">
+        <div class="caso-comparison" style="grid-template-columns:1fr">
+          <div class="caso-side">
+            <img src="img/caso6.jpeg" alt="Caso 6" style="width:100%;height:100%;object-fit:cover" />
+          </div>
+        </div>
+        <div class="caso-info">
+          <h4>Caso Clínico 6</h4>
+          <span>Transformação de Sorriso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contato Section -->
+<section class="section" id="contato">
+  <div class="container">
+    <div class="contato-grid">
+      <div class="contato-info reveal">
+        <p class="section-tag" style="margin-bottom:.25rem">Fale Conosco</p>
+        <h2>Agende sua <em>Consulta</em></h2>
+        <div class="divider" style="margin:1rem 0 1.5rem"></div>
+
+        <div class="hours-badge">
+          <div class="dot"></div>
+          Aberto · Fecha às 19h
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Endereço</strong>
+            <span>Edificio Office Tower<br/>R. Conselheiro Moreira de Barros, 159 - Sala 46<br/>Centro, Taubaté - SP, 12020-130</span>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>Telefone</strong>
+            <a href="tel:+551234260989">(12) 3426-0989</a>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <strong>Horário de Funcionamento</strong>
+            <span>Segunda a Sexta: 8h às 19h<br/>Sábado: 8h às 12h</span>
+          </div>
+        </div>
+
+        <div class="contato-cta">
+          <a href="https://wa.me/551234260989" class="btn-primary" target="_blank" style="font-size:.85rem;padding:1rem 2.5rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+            Agendar via WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contato-map reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.7!2d-45.555!3d-23.027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.%20Conselheiro%20Moreira%20de%20Barros%2C%20159%20-%20Centro%2C%20Taubat%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1689000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização do Consultório"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">
+        <span>Dra. Jaqueline Bellato</span>
+        <div class="gold-dot"></div>
+      </div>
+      <p>Consultório odontológico moderno em Taubaté, oferecendo tratamentos com tecnologia avançada e cuidado humanizado. Sua saúde bucal em boas mãos.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29.94 29.94 0 0 0 1 12a29.94 29.94 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29.94 29.94 0 0 0 23 12a29.94 29.94 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Menu de Navegação</h4>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#casos">Casos Reais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+551234260989">(12) 3426-0989</a></li>
+        <li><a href="https://wa.me/551234260989" target="_blank">WhatsApp</a></li>
+        <li><span style="color:rgba(245,242,237,.4);font-size:.8rem">Ed. Office Tower - Sala 46<br/>Centro, Taubaté - SP</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Dra. Jaqueline Bellato. Todos os direitos reservados.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/551234260989" class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp" title="Agendar via WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+</a>
+
+<script>
+// ===== NAVIGATION SCROLL EFFECT =====
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// ===== MOBILE MENU =====
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileClose = document.getElementById('mobileClose');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+mobileToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ===== SCROLL REVEAL =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ===== SMOOTH SCROLL FOR ALL ANCHOR LINKS (including mobile) =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+<!-- Google Analytics (placeholder - replace with actual ID) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+</body>
+</html>
