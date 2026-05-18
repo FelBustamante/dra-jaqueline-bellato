@@ -133,7 +133,11 @@
     .servicos{background:#f5f2ed}
     .servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
     @media(max-width:1024px){.servicos-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.servicos-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){
+      .servicos-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;padding:0 1rem;margin:0 -1rem;scrollbar-width:none;-ms-overflow-style:none}
+      .servicos-grid::-webkit-scrollbar{display:none}
+      .servico-card{flex:0 0 82%;scroll-snap-align:start;min-width:0}
+    }
     .servico-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:6px;padding:2.5rem 2rem;transition:all .4s ease;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.03)}
     .servico-card:hover{border-color:rgba(197,160,89,.4);background:#fff;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
     .servico-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,160,89,.3),transparent);opacity:0;transition:opacity .4s}
@@ -148,7 +152,11 @@
     /* ===== DEPOIMENTOS ===== */
     .depoimentos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
     @media(max-width:1024px){.depoimentos-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){.depoimentos-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){
+      .depoimentos-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:1rem;padding:0 1rem;margin:0 -1rem;scrollbar-width:none;-ms-overflow-style:none}
+      .depoimentos-grid::-webkit-scrollbar{display:none}
+      .depoimento-card{flex:0 0 82%;scroll-snap-align:start;min-width:0}
+    }
     .depoimento-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:2rem;position:relative}
     .depoimento-card .google-label{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem}
     .depoimento-card .google-label img{height:16px;opacity:.7}
