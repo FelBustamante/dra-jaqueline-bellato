@@ -108,17 +108,20 @@
     .stat-label{font-size:.7rem;color:rgba(245,242,237,.5);text-transform:uppercase;letter-spacing:1.5px;margin-top:.5rem}
 
     /* ===== SERVIÇOS ===== */
-    .servicos{background:rgba(20,27,29,.5)}
+    .servicos{background:#f5f2ed}
     .servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
     @media(max-width:1024px){.servicos-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:600px){.servicos-grid{grid-template-columns:1fr}}
-    .servico-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:6px;padding:2.5rem 2rem;transition:all .4s ease;position:relative;overflow:hidden}
-    .servico-card:hover{border-color:rgba(197,160,89,.3);background:rgba(197,160,89,.03);transform:translateY(-4px)}
+    .servico-card{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:6px;padding:2.5rem 2rem;transition:all .4s ease;position:relative;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+    .servico-card:hover{border-color:rgba(197,160,89,.4);background:#fff;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.06)}
     .servico-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(197,160,89,.3),transparent);opacity:0;transition:opacity .4s}
     .servico-card:hover::before{opacity:1}
     .servico-icon{width:48px;height:48px;border-radius:50%;border:1px solid rgba(197,160,89,.3);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;color:#C5A059;font-size:1.2rem}
-    .servico-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#F5F2ED;margin-bottom:.75rem;letter-spacing:.5px}
-    .servico-card p{font-size:.8rem;color:rgba(245,242,237,.5);line-height:1.7;letter-spacing:.3px}
+    .servico-card h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#1A2426;margin-bottom:.75rem;letter-spacing:.5px}
+    .servico-card p{font-size:.8rem;color:rgba(26,36,38,.6);line-height:1.7;letter-spacing:.3px}
+    .servicos .section-tag{color:#C5A059}
+    .servicos .section-header h2{color:#1A2426}
+    .servicos .section-header h2 em{color:#C5A059}
 
     /* ===== DEPOIMENTOS ===== */
     .depoimentos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
@@ -177,22 +180,22 @@
     .contato-cta{margin-top:2rem}
 
     /* ===== FOOTER ===== */
-    .footer{background:#141b1d;border-top:1px solid rgba(255,255,255,.05);padding:4rem 2rem 2rem}
+    .footer{background:#faf8f5;border-top:1px solid rgba(0,0,0,.06);padding:4rem 2rem 2rem}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto}
     @media(max-width:768px){.footer-grid{grid-template-columns:1fr}}
-    .footer-brand p{font-size:.8rem;color:rgba(245,242,237,.4);line-height:1.8;margin-top:1rem;max-width:300px}
-    .footer h4{font-size:.75rem;color:#F5F2ED;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem;font-weight:500}
+    .footer-brand p{font-size:.8rem;color:rgba(26,36,38,.5);line-height:1.8;margin-top:1rem;max-width:300px}
+    .footer h4{font-size:.75rem;color:#1A2426;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem;font-weight:600}
     .footer-links{list-style:none}
     .footer-links li{margin-bottom:.75rem}
-    .footer-links a{font-size:.8rem;color:rgba(245,242,237,.4);text-decoration:none;transition:color .3s;letter-spacing:.3px}
+    .footer-links a{font-size:.8rem;color:rgba(26,36,38,.5);text-decoration:none;transition:color .3s;letter-spacing:.3px}
     .footer-links a:hover{color:#C5A059}
     .footer-social{display:flex;gap:1rem;margin-top:1.5rem}
-    .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(245,242,237,.4);transition:all .3s;text-decoration:none;font-size:.8rem}
+    .footer-social a{width:36px;height:36px;border-radius:50%;border:1px solid rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;color:rgba(26,36,38,.4);transition:all .3s;text-decoration:none;font-size:.8rem}
     .footer-social a:hover{border-color:#C5A059;color:#C5A059}
-    .footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-    .footer-bottom p{font-size:.7rem;color:rgba(245,242,237,.3);letter-spacing:.5px}
+    .footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid rgba(0,0,0,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+    .footer-bottom p{font-size:.7rem;color:rgba(26,36,38,.3);letter-spacing:.5px}
     .footer-bottom-links{display:flex;gap:1.5rem}
-    .footer-bottom-links a{font-size:.7rem;color:rgba(245,242,237,.3);text-decoration:none;transition:color .3s}
+    .footer-bottom-links a{font-size:.7rem;color:rgba(26,36,38,.3);text-decoration:none;transition:color .3s}
     .footer-bottom-links a:hover{color:#C5A059}
 
     /* ===== WHATSAPP FLOATING ===== */
@@ -708,7 +711,7 @@
       <ul class="footer-links">
         <li><a href="tel:+551234260989">(12) 3426-0989</a></li>
         <li><a href="https://wa.me/551234260989" target="_blank">WhatsApp</a></li>
-        <li><span style="color:rgba(245,242,237,.4);font-size:.8rem">Ed. Office Tower - Sala 46<br/>Centro, Taubaté - SP</span></li>
+        <li><span style="color:rgba(26,36,38,.5);font-size:.8rem">Ed. Office Tower - Sala 46<br/>Centro, Taubaté - SP</span></li>
       </ul>
     </div>
   </div>
